@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: 'auth'
 
   resources :suppliers, except: [:new, :edit], :defaults => { :format => 'json' }
   resources :products, except: [:new, :edit], :defaults => { :format => 'json' }

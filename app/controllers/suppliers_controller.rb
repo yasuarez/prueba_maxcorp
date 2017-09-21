@@ -1,4 +1,5 @@
 class SuppliersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_supplier, only: [:show, :update, :destroy]
 
   def index

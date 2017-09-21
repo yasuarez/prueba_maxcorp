@@ -1,4 +1,5 @@
 class InventoryController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_inventory, only: [:show, :update, :destroy]
   def index
     @inventoryAll = InventoryMovement.all.as_json(:include => [:inventory_entries , :inventory_outputs ])

@@ -1,7 +1,8 @@
 class SuppliersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_supplier, only: [:show, :update, :destroy]
-
+  load_and_authorize_resource
+  
   def index
     @suppliers = Supplier.all
     render json: @suppliers
